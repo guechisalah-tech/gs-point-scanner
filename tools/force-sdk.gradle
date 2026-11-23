@@ -1,0 +1,8 @@
+// يرفع compileSdk لكل الإضافات إلى 36 (لتجاوز خطأ AAR metadata مع file_picker)
+allprojects {
+    afterEvaluate { p ->
+        if (p.hasProperty('android')) {
+            p.android.compileSdkVersion 36
+        }
+    }
+}

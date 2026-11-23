@@ -18,6 +18,7 @@ jobs:
           cache: true
       - run: flutter create --platforms=android --org dz.gs --project-name gs_point_scanner .
       - run: cp android_overrides/AndroidManifest.xml android/app/src/main/AndroidManifest.xml
+      - run: mkdir -p ~/.gradle/init.d && cp tools/force-sdk.gradle ~/.gradle/init.d/force-sdk.gradle
       - run: flutter pub get
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
